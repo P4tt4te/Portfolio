@@ -36,3 +36,17 @@ function souris( evt ) {
   }
 
 }
+
+// animation carte //
+
+document.addEventListener('DOMContentLoaded',carte);
+
+function carte( evt ){
+  var carte = document.querySelector('.carte-flip');
+  var devant = document.querySelector('.carte-flip-avant');
+  var arriere = document.querySelector('.carte-flip-arriere');
+  carte.addEventListener('onclick',retourne);
+  function retourne( evt ){
+      
+  }
+}
