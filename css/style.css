@@ -1,0 +1,53 @@
+:root {
+  --background: #F0F0F3;
+  --grey: #363636;
+}
+
+/* style général */
+html {
+  background-color: var(--background);
+  color: var(--grey);
+  font-family: 'Archivo' , sans-serif;
+  cursor : none;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+h1,h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+/* curseur */
+.cursor {
+  position: fixed;
+  pointer-events: none !important;
+
+}
+
+.cursor2 {
+  position: fixed;
+  pointer-events: none !important;
+  fill: var(--grey);
+}
+
+/* header */
+header {
+  height : 70px;
+}
+
+/* version pc */
+@media all and (min-width: 1526px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}
