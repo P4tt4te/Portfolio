@@ -62,31 +62,56 @@ function carte() {
 }
 
 function carteanim() {
+  console.log('carteanim');
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    coordsouris();
+  } else {
+    coordtel();
+  }
+
+
+}
+
+function coordsouris() {
+  console.log('souris');
   var flip = document.querySelector('.carte-flip');
   var carte = document.querySelector('.ensemble-carte');
   let mousePosX = 0,
     mousePosY = 0;
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    document.addEventListener('mousemove', coord);
+  document.addEventListener('mousemove', coord);
 
-    function coord(e) {
-      mousePosX = e.pageX;
-      mousePosY = e.pageY;
-      mousePosX = mousePosX / 20;
-      mousePosY = mousePosY / 20;
-    }
-  } else {
-    window.addEventListener('deviceorientation', handleOrientation);
+  function coord(e) {
+    mousePosX = e.pageX;
+    mousePosY = e.pageY;
+    mousePosX = mousePosX / 20;
+    mousePosY = mousePosY / 20;
 
-    function handleOrientation(e) {
-      mousePosX = e.beta;
-      mousePosY = e.gamma;
+    if (carte.classList.contains('retourne') == true) {
+      mousePosX = mousePosX + 180;
     }
+    flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+  }
+
+
+
+}
+
+function coordtel() {
+  console.log('tel');
+  var flip = document.querySelector('.carte-flip');
+  var carte = document.querySelector('.ensemble-carte');
+  let mousePosX = 0,
+    mousePosY = 0;
+
+  window.addEventListener('deviceorientation', handleOrientation);
+
+  function handleOrientation(e) {
+    mousePosX = e.beta;
+    mousePosY = e.gamma;
   }
 
   if (carte.classList.contains('retourne') == true) {
     mousePosX = mousePosX + 180;
   }
   flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
-
 }
