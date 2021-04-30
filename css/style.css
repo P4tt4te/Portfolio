@@ -73,7 +73,7 @@ header {
   height: 100%;
   position:relative;
   transform-style: preserve-3d;
-  
+  transition: transform 0.2s;
 
 
 }
