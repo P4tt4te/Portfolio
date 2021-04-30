@@ -76,7 +76,7 @@ function carteanim() {
       mousePosY = mousePosY / 20;
     }
   } else {
-    document.addEventListener('deviceorientation', handleOrientation);
+    window.addEventListener('deviceorientation', handleOrientation);
 
     function handleOrientation(e) {
       mousePosX = e.beta;
