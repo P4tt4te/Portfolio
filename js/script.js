@@ -1,52 +1,92 @@
-// mise en place du curseur
+// mise en place du curseur//
 
 var hoverables = document.querySelectorAll('.hoverable');
 
-document.addEventListener('DOMContentLoaded', souris);
+document.addEventListener('DOMContentLoaded', debut);
 
-function souris( evt ) {
+function debut(evt) {
+  souris();
+  carte();
+  carteanim();
+}
+
+function souris() {
   const grandCercle = document.querySelector('.cursor2');
   const petitCercle = document.querySelector('.cursor');
+  var carte = document.querySelector('.carte-flip');
   if (window.matchMedia("(min-width: 768px)").matches) {
     let mousePosX = 0,
-        mousePosY = 0;
+      mousePosY = 0;
 
-    document.addEventListener('mousemove',coor);
-    function coor( e ) {
+    document.addEventListener('mousemove', coor);
+
+    function coor(e) {
       mousePosX = e.pageX;
       mousePosY = e.pageY;
       petitCercle.style.top = mousePosY + "px";
       petitCercle.style.left = mousePosX + "px";
+
+
     }
 
     let delay = 6,
-        calculMousePosX = 0,
-        calculMousePosY = 0;
+      calculMousePosX = 0,
+      calculMousePosY = 0;
 
     function delayMouseFollow() {
-        requestAnimationFrame(delayMouseFollow);
+      requestAnimationFrame(delayMouseFollow);
 
-        calculMousePosX += (mousePosX - calculMousePosX) / delay;
-        calculMousePosY += (mousePosY - calculMousePosY) / delay;
+      calculMousePosX += (mousePosX - calculMousePosX) / delay;
+      calculMousePosY += (mousePosY - calculMousePosY) / delay;
 
-        grandCercle.style.top = calculMousePosY + "px";
-        grandCercle.style.left = calculMousePosX + "px";
+      grandCercle.style.top = calculMousePosY + "px";
+      grandCercle.style.left = calculMousePosX + "px";
     }
     delayMouseFollow();
+  } else {
+    petitCercle.style.display = 'none';
+    grandCercle.style.display = 'none';
+  }
+}
+
+
+function carte() {
+  var carte = document.querySelector('.ensemble-carte');
+
+  carte.addEventListener('click', retourne);
+
+  function retourne(evt) {
+    carte.classList.toggle('retourne');
   }
 
 }
 
-// animation carte //
+function carteanim() {
+  var flip = document.querySelector('.carte-flip');
+  var carte = document.querySelector('.ensemble-carte');
+  let mousePosX = 0,
+    mousePosY = 0;
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    document.addEventListener('mousemove', coord);
 
-document.addEventListener('DOMContentLoaded',carte);
+    function coord(e) {
+      mousePosX = e.pageX;
+      mousePosY = e.pageY;
+      mousePosX = mousePosX / 20;
+      mousePosY = mousePosY / 20;
+    }
+  } else {
+    document.addEventListener('deviceorientation', handleOrientation);
 
-function carte( evt ){
-  var carte = document.querySelector('.carte-flip');
-  var devant = document.querySelector('.carte-flip-avant');
-  var arriere = document.querySelector('.carte-flip-arriere');
-  carte.addEventListener('onclick',retourne);
-  function retourne( evt ){
-      
+    function handleOrientation(e) {
+      mousePosX = e.beta;
+      mousePosY = e.gamma;
+    }
   }
+
+  if (carte.classList.contains('retourne') == true) {
+    mousePosX = mousePosX + 180;
+  }
+  flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+
 }

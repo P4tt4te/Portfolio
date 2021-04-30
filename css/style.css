@@ -30,10 +30,15 @@ img {
 p {
   font-weight: 500;
 }
+
+main {
+  height: 100%;
+}
 /* curseur */
 .cursor {
   position: fixed;
   pointer-events: none !important;
+  z-index:11;
 
 }
 
@@ -41,6 +46,7 @@ p {
   position: fixed;
   pointer-events: none !important;
   fill: var(--grey);
+  z-index:10;
 }
 
 /* header */
@@ -49,10 +55,13 @@ header {
 }
 
 /* presentation */
+.ensemble-carte {
+  height: 100vw;
+
+}
 .carte {
   border-radius: 6px;
-  width:100%;
-  height:420px;
+  height:100%;
   overflow: hidden;
   filter: drop-shadow(8px 8px 10px rgba(174,174,192,0.4)) drop-shadow(-8px -8px 10px white);
   background-color: var(--background);
@@ -61,14 +70,14 @@ header {
 }
 
 .carte-flip {
+  height: 100%;
   position:relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+
 }
 
-.ensemble-carte:hover .carte-flip {
-  transform: rotateY(180deg);
-}
 .carte-flip-avant {
   position: absolute;
 }
