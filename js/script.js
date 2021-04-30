@@ -77,17 +77,30 @@ function coordsouris() {
   var flip = document.querySelector('.carte-flip');
   var carte = document.querySelector('.ensemble-carte');
   let mousePosX = 0,
+      largeur,
+      longeur,
     mousePosY = 0;
   document.addEventListener('mousemove', coord);
 
   function coord(e) {
     mousePosX = e.pageX;
     mousePosY = e.pageY;
-    mousePosX = mousePosX / 20;
-    mousePosY = mousePosY / 20;
+
+    largeur = window.innerWidth;
+    longeur = window.innerHeight;
+
+    mousePosX = ((mousePosX * 2) - largeur)/40;
+    mousePosY = ((mousePosY * 2) - longeur)/40;
 
     if (carte.classList.contains('retourne') == true) {
       mousePosX = mousePosX + 180;
+    }
+
+    if (mousePosX < largeur) {
+      mousePosX = -(mousePosX);
+    }
+    if (mousePosY < longeur) {
+      mousePosY = -(mousePosY);
     }
     flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
   }
