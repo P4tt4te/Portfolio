@@ -106,8 +106,8 @@ function coordtel() {
   window.addEventListener('deviceorientation', handleOrientation);
 
   function handleOrientation(e) {
-    mousePosX = e.beta;
-    mousePosY = e.gamma;
+    mousePosX = e.gamma;
+    mousePosY = e.beta;
 
     if (carte.classList.contains('retourne') == true) {
       mousePosX = mousePosX + 180;
