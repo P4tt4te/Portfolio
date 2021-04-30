@@ -108,10 +108,12 @@ function coordtel() {
   function handleOrientation(e) {
     mousePosX = e.beta;
     mousePosY = e.gamma;
+
+    if (carte.classList.contains('retourne') == true) {
+      mousePosX = mousePosX + 180;
+    }
+    flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
   }
 
-  if (carte.classList.contains('retourne') == true) {
-    mousePosX = mousePosX + 180;
-  }
-  flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+
 }
