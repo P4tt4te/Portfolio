@@ -109,13 +109,21 @@ header {
 .desc-carte-txt {
   display: flex;
   vertical-align: bottom;
+  height: 18px;
+  min-width: 120px;
+  margin-top: 45px;
+  margin-right: 10px;
 }
 
 .sourire {
   margin-left: 1%;
 }
 
-.desc-carte {}
+.desc-carte {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
 
 /* version pc */
 @media all and (min-width: 1526px) {
