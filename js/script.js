@@ -52,7 +52,18 @@ function souris() {
 
 // gere le retournement de la carte//
 function carte() {
+  var options = {
+    root: document.querySelector('#presentation'),
+    rootMargin: '0px',
+    threshold: 0.5
+  }
+  var observer = new IntersectionObserver(callback, options);
   var carte = document.querySelector('.ensemble-carte');
+  observer.observe(carte);
+
+  function callback() {
+    console.log('cc');
+  }
 
   carte.addEventListener('click', retourne);
 
@@ -129,6 +140,7 @@ function coordtel() {
       mousePosX = mousePosX + 180;
     }
     flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+
   }
 }
 //gere l'affichage du texte de description de l'image de présentation en fonction du support de l'utilisateur (pc ou mobile)//
