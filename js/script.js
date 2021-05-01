@@ -8,7 +8,7 @@ function debut(evt) {
   souris();
   carte();
   carteanim();
-
+  tuto();
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -131,7 +131,7 @@ function coordtel() {
     flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
   }
 }
-
+//gere l'affichage du texte de description de l'image de présentation en fonction du support de l'utilisateur (pc ou mobile)//
 function descimage(type) {
   var zone = document.querySelector('.desc-carte-txt');
   let texte = document.createElement('p');
@@ -143,4 +143,19 @@ function descimage(type) {
   }
   texte.classList.add('texte-clique');
   zone.prepend(texte);
+}
+
+function tuto() {
+  var bouton = document.querySelector('.bouton-tuto');
+  var zone = document.querySelector('.ensemble-bouton-tuto');
+  let phrase = document.createElement('p');
+  phrase.textContent = "Je me doutais bien que tu allais appuyer sur ce bouton, concrètement il sert à rien mais au moins tu sais comment sont les boutons sur ce site.";
+  phrase.classList.add('bouton-tuto-txt');
+
+  bouton.addEventListener('click',affiche);
+
+  function affiche ( evt ){
+    zone.append(phrase);
+    bouton.src = "content/presentation/help_active.svg";
+  }
 }

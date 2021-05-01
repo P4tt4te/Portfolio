@@ -33,6 +33,7 @@ h2 {
 
 p {
   font-weight: 500;
+  font-size: 0.75rem;
 }
 
 main {
@@ -104,6 +105,7 @@ header {
 .texte-clique {
   font-family: Winkle, sans-serif;
   margin: 0;
+  font-size: 1rem;
 }
 
 .desc-carte-txt {
@@ -125,6 +127,26 @@ header {
   flex-wrap: nowrap;
 }
 
+.ensemble-bouton-tuto {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bouton-tuto {
+  width:50%;
+  transition: transform 0.2s;
+}
+
+@keyframes fondu {
+    0% { opacity:0; }
+
+    100% { opacity:1; }
+}
+
+.bouton-tuto-txt {
+  animation: fondu 2s ease-in;
+}
 /* version pc */
 @media all and (min-width: 1526px) {
   h1 {
