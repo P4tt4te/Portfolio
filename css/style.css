@@ -45,6 +45,11 @@ main {
   height: 100%;
 }
 
+.bouton {
+  filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
+  background-color: var(--background);
+  border-radius: 6px;
+}
 /* curseur */
 .cursor {
   position: fixed;
@@ -70,11 +75,8 @@ header {
 }
 
 .carte {
-  border-radius: 6px;
   height: 100%;
   overflow: hidden;
-  filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
-  background-color: var(--background);
   backface-visibility: hidden;
   perspective: 1000px;
 }
@@ -157,6 +159,13 @@ header {
 
 .title-competences {
   margin-bottom: 0;
+}
+.bouton-voir {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 40%;
+  text-align: center;
+  overflow: hidden;
 }
 /* version pc */
 @media all and (min-width: 1526px) {
