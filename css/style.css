@@ -85,6 +85,7 @@ header {
   backface-visibility: hidden;
   perspective: 1000px;
   background-color: var(--background);
+  filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
 }
 
 .carte-flip {
@@ -220,6 +221,20 @@ header {
   }
 }
 
+.bouton-github {
+  width: 65%;
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trait-github {
+  transform: rotateZ(15deg) translateY(10%);
+}
+
+.logo-github {
+  width: 20%;
+}
 
 /* version pc */
 @media all and (min-width: 1526px) {
