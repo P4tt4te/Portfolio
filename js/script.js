@@ -52,19 +52,7 @@ function souris() {
 
 // gere le retournement de la carte//
 function carte() {
-  var options = {
-    root: document.querySelector('#presentation'),
-    rootMargin: '0px',
-    threshold: 0.5
-  }
-  var observer = new IntersectionObserver(callback, options);
   var carte = document.querySelector('.ensemble-carte');
-  observer.observe(carte);
-
-  function callback() {
-    console.log('cc');
-  }
-
   carte.addEventListener('click', retourne);
 
   function retourne(evt) {
@@ -94,7 +82,28 @@ function coordsouris() {
     largeur,
     longeur,
     mousePosY = 0;
-  document.addEventListener('mousemove', coord);
+  //gere l'animation quand elle est visible//
+  let visible = true;
+  var options = {
+    rootMargin: '0px',
+    threshold: 0.1
+  }
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe(carte);
+
+  function callback() {
+
+    if (visible == true) {
+      document.addEventListener('mousemove', coord);
+      visible = false;
+      console.log('ajoute');
+    } else {
+      document.removeEventListener('mousemove', coord);
+      visible = true;
+      console.log('retire');
+    }
+  }
+
 
   function coord(e) {
     mousePosX = e.pageX;
@@ -130,7 +139,28 @@ function coordtel() {
   let mousePosX = 0,
     mousePosY = 0;
 
-  window.addEventListener('deviceorientation', handleOrientation);
+    let visible = true;
+    var options = {
+      rootMargin: '0px',
+      threshold: 0.1
+    }
+    var observer = new IntersectionObserver(callback, options);
+    observer.observe(carte);
+
+    function callback() {
+
+      if (visible == true) {
+        window.addEventListener('deviceorientation', handleOrientation);
+        visible = false;
+        console.log('ajoute');
+      } else {
+        window.removeEventListener('deviceorientation', handleOrientation);
+        visible = true;
+        console.log('retire');
+      }
+    }
+
+
 
   function handleOrientation(e) {
     mousePosX = e.gamma;
@@ -165,9 +195,9 @@ function tuto() {
   phrase.textContent = "Je me doutais bien que tu allais appuyer sur ce bouton, concrètement il sert à rien mais au moins tu sais comment sont les boutons sur ce site.";
   phrase.classList.add('bouton-tuto-txt');
 
-  bouton.addEventListener('click',affiche);
+  bouton.addEventListener('click', affiche);
 
-  function affiche ( evt ){
+  function affiche(evt) {
     zone.append(phrase);
     bouton.src = "content/presentation/help_active.svg";
   }
