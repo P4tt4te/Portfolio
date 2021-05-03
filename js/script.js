@@ -135,6 +135,7 @@ function coordtel() {
   function handleOrientation(e) {
     mousePosX = e.gamma;
     mousePosY = e.beta;
+    mousePosY = mousePosY - 30;
 
     if (carte.classList.contains('retourne') == true) {
       mousePosX = mousePosX + 180;
