@@ -9,6 +9,7 @@ function debut(evt) {
   carte();
   carteanim();
   tuto();
+  animoosic();
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -139,28 +140,26 @@ function coordtel() {
   let mousePosX = 0,
     mousePosY = 0;
 
-    let visible = true;
-    var options = {
-      rootMargin: '0px',
-      threshold: 0.1
+  let visible = true;
+  var options = {
+    rootMargin: '0px',
+    threshold: 0.1
+  }
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe(carte);
+
+  function callback() {
+
+    if (visible == true) {
+      window.addEventListener('deviceorientation', handleOrientation);
+      visible = false;
+      console.log('ajoute');
+    } else {
+      window.removeEventListener('deviceorientation', handleOrientation);
+      visible = true;
+      console.log('retire');
     }
-    var observer = new IntersectionObserver(callback, options);
-    observer.observe(carte);
-
-    function callback() {
-
-      if (visible == true) {
-        window.addEventListener('deviceorientation', handleOrientation);
-        visible = false;
-        console.log('ajoute');
-      } else {
-        window.removeEventListener('deviceorientation', handleOrientation);
-        visible = true;
-        console.log('retire');
-      }
-    }
-
-
+  }
 
   function handleOrientation(e) {
     mousePosX = e.gamma;
@@ -188,6 +187,7 @@ function descimage(type) {
   zone.prepend(texte);
 }
 
+//affiche le texte quand on appuie sur le bouton avec le '?' + change le bouton//
 function tuto() {
   var bouton = document.querySelector('.bouton-tuto');
   var zone = document.querySelector('.ensemble-bouton-tuto');
@@ -200,5 +200,37 @@ function tuto() {
   function affiche(evt) {
     zone.append(phrase);
     bouton.src = "content/presentation/help_active.svg";
+  }
+}
+
+//déclanche l'animation des pages de webdesign au scroll//
+function animoosic() {
+  var pagea = document.querySelector('.moosic');
+  var pageb = document.querySelector('.moosic-b');
+  var parent = document.querySelector('.galerie-competences');
+
+  let visible = false;
+  pagea.style.display = 'none';
+  pageb.style.display = 'none';
+  var options = {
+    rootMargin: '0px',
+    threshold: 0.1
+  }
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe(parent);
+
+  function callback() {
+
+    if (visible == true) {
+      pagea.style.display = 'none';
+      pageb.style.display = 'none';
+      visible = false;
+      console.log('ajoute');
+    } else {
+      pagea.style.display = 'inline';
+      pageb.style.display = 'inline';
+      visible = true;
+      console.log('retire');
+    }
   }
 }
