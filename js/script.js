@@ -107,6 +107,10 @@ function coordsouris() {
 
 
   function coord(e) {
+    window.setTimeout(attente,100);
+    function attente() {
+
+    }
     mousePosX = e.pageX;
     mousePosY = e.pageY;
 
@@ -127,6 +131,7 @@ function coordsouris() {
       mousePosY = -(mousePosY);
     }
     flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+
   }
 
 
@@ -137,7 +142,6 @@ function coordtel() {
   console.log('tel');
   var flip = document.querySelector('.carte-flip');
   var carte = document.querySelector('.ensemble-carte');
-  let timer1;
   let mousePosX = 0,
     mousePosY = 0;
 
@@ -152,20 +156,24 @@ function coordtel() {
   function callback() {
 
     if (visible == true) {
-      window.addEventListener('deviceorientation', timer);
+      window.addEventListener('deviceorientation', handleOrientation);
       visible = false;
       console.log('ajoute');
     } else {
-      window.removeEventListener('deviceorientation', timer);
+      window.removeEventListener('deviceorientation', handleOrientation);
       visible = true;
       console.log('retire');
     }
   }
 
   function timer ( evt ) {
-    timer1 = window.setTimeout(handleOrientation,100);
+
   }
   function handleOrientation(e) {
+    window.setTimeout(attente,100);
+    function attente() {
+
+    }
     mousePosX = e.gamma;
     mousePosY = e.beta;
     mousePosY = mousePosY - 30;
