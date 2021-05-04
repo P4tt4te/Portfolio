@@ -10,6 +10,7 @@ function debut(evt) {
   carteanim();
   tuto();
   animoosic();
+
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -219,7 +220,7 @@ function tuto() {
 function animoosic() {
   var pagea = document.querySelector('.moosic');
   var pageb = document.querySelector('.moosic-b');
-  var parent = document.querySelector('.galerie-competences');
+  var parent = document.querySelector('.web-design');
 
   let visible = true;
   pagea.style.display = 'none';

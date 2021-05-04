@@ -94,6 +94,8 @@ header {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.2s;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .photo {
@@ -102,10 +104,12 @@ header {
 
 .carte-flip-avant {
   position: absolute;
+  top:-20px;
 }
 
 .carte-flip-arriere {
   position: absolute;
+  top:-20px;
   transform: rotateY(180deg);
 }
 
@@ -266,6 +270,20 @@ header {
   width:4%;
 }
 
+footer {
+  display:flex;
+  justify-content: space-between;
+}
+
+.reseaux-liste {
+  display:flex;
+  justify-content: space-between;
+  width:40%;
+}
+
+.reseaux-logo {
+  width:30px;
+}
 /* version pc */
 @media all and (min-width: 1526px) {
   h1 {
