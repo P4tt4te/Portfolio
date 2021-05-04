@@ -209,7 +209,7 @@ function animoosic() {
   var pageb = document.querySelector('.moosic-b');
   var parent = document.querySelector('.galerie-competences');
 
-  let visible = false;
+  let visible = true;
   pagea.style.display = 'none';
   pageb.style.display = 'none';
   var options = {
