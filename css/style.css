@@ -50,6 +50,8 @@ main {
   filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
   background-color: var(--background);
   border-radius: 6px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .winkle {
@@ -177,7 +179,7 @@ header {
 }
 
 .galerie-competences {
-  height: 200px;
+  height: 300px;
 }
 
 .bouton-voir {
@@ -189,7 +191,7 @@ header {
 }
 
 .galerie-competences {
-  padding-top: 20%;
+  padding-top: 20vw;
 }
 
 .moosic {

@@ -137,6 +137,7 @@ function coordtel() {
   console.log('tel');
   var flip = document.querySelector('.carte-flip');
   var carte = document.querySelector('.ensemble-carte');
+  let timer1;
   let mousePosX = 0,
     mousePosY = 0;
 
@@ -151,16 +152,19 @@ function coordtel() {
   function callback() {
 
     if (visible == true) {
-      window.addEventListener('deviceorientation', handleOrientation);
+      window.addEventListener('deviceorientation', timer);
       visible = false;
       console.log('ajoute');
     } else {
-      window.removeEventListener('deviceorientation', handleOrientation);
+      window.removeEventListener('deviceorientation', timer);
       visible = true;
       console.log('retire');
     }
   }
 
+  function timer ( evt ) {
+    timer1 = window.setTimeout(handleOrientation,100);
+  }
   function handleOrientation(e) {
     mousePosX = e.gamma;
     mousePosY = e.beta;
