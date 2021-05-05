@@ -32,15 +32,15 @@ function souris() {
 
     }
 
-    let delay = 6,
+    let delai = 6,
       calculMousePosX = 0,
       calculMousePosY = 0;
 
     function delayMouseFollow() {
       requestAnimationFrame(delayMouseFollow);
 
-      calculMousePosX += (mousePosX - calculMousePosX) / delay;
-      calculMousePosY += (mousePosY - calculMousePosY) / delay;
+      calculMousePosX += (mousePosX - calculMousePosX) / delai;
+      calculMousePosY += (mousePosY - calculMousePosY) / delai;
 
       grandCercle.style.top = calculMousePosY + "px";
       grandCercle.style.left = calculMousePosX + "px";
@@ -247,3 +247,11 @@ function animoosic() {
     }
   }
 }
+
+// anime le cmd de windows //
+
+function cmd() {
+
+}
+
+// //

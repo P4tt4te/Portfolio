@@ -47,6 +47,13 @@ main {
   height: 100%;
 }
 
+a {
+  width: 100%;
+}
+
+section {
+  margin-top: 20%;
+}
 .bouton {
   filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
   background-color: var(--background);
@@ -56,8 +63,9 @@ main {
 }
 
 .winkle {
-  font-family: 'Winkle' , sans-serif;
+  font-family: 'Winkle', sans-serif;
 }
+
 /* curseur */
 .cursor {
   position: fixed;
@@ -87,7 +95,6 @@ header {
   overflow: hidden;
   backface-visibility: hidden;
   perspective: 1000px;
-
 }
 
 .carte-flip {
@@ -105,12 +112,12 @@ header {
 
 .carte-flip-avant {
   position: absolute;
-  top:-20px;
+  top: -20px;
 }
 
 .carte-flip-arriere {
   position: absolute;
-  top:-20px;
+  top: -20px;
   transform: rotateY(180deg);
 }
 
@@ -163,6 +170,7 @@ header {
     transform: scale(0);
     opacity: 0;
   }
+
   85% {
     transform: scale(1.2);
     opacity: 0.8;
@@ -217,7 +225,7 @@ header {
 
   100% {
     opacity: 1;
-    transform:none;
+    transform: none;
   }
 }
 
@@ -265,31 +273,82 @@ header {
 }
 
 .code-underscore {
-  position:relative;
-  top:-1rem;
-  left:5.5rem;
-  width:4%;
+  position: relative;
+  top: -1rem;
+  left: 5.5rem;
+  width: 4%;
 }
 
 .bouton-affichage {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
-footer {
-  display:flex;
+/* mes outils */
+.trie-grille {
+  display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bouton-grille {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* mes productions */
+.grille-projet {
+  display: grid;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 25%;
+  grid-gap: 10%;
+}
+
+.photo-item-grille {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.photo-item-grille:hover {
+  animation:cercle 0.6s linear;
+  clip-path: circle(70% at 50% 50%);
+}
+
+@keyframes cercle {
+  0% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(30% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(70% at 50% 50%);
+  }
+}
+
+.grille-txt {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20%;
 }
 
 .reseaux-liste {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  width:40%;
+  width: 40%;
 }
 
 .reseaux-logo {
-  width:30px;
+  width: 30px;
 }
+
 /* version pc */
 @media all and (min-width: 1526px) {
   h1 {
