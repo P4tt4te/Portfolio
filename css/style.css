@@ -91,10 +91,9 @@ nav {
   top: 0;
   right:0;
   left:0;
-  bottom:50%;
+  bottom:40%;
   background-color: var(--grey);
   z-index: 2;
-  overflow:inherit;
 }
 
 .rond {

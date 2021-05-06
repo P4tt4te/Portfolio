@@ -109,7 +109,8 @@ function coordsouris() {
 
 
   function coord(e) {
-    window.setTimeout(attente,100);
+    window.setTimeout(attente, 100);
+
     function attente() {
 
     }
@@ -168,11 +169,13 @@ function coordtel() {
     }
   }
 
-  function timer ( evt ) {
+  function timer(evt) {
 
   }
+
   function handleOrientation(e) {
-    window.setTimeout(attente,100);
+    window.setTimeout(attente, 100);
+
     function attente() {
 
     }
@@ -268,27 +271,28 @@ function menu() {
   var affiche = false;
   var i = 0;
 
-  function activ( evt ) {
-    if (i == 0){
+  function activ(evt) {
+    if (i == 0) {
       menu.classList.remove('menu-off');
-    }else if (i >= 1) {
+    } else if (i >= 1) {
       menu.classList.toggle('menu-off-b');
     }
-    i = i+1;
+    i = i + 1;
     menu.classList.toggle('menu-on');
     retour.classList.toggle('retour-off');
     retour.classList.toggle('retour-on');
-    window.setTimeout(attente,600);
+    window.setTimeout(attente, 600);
+
     function attente() {
-        if (affiche == false) {
+      if (affiche == false) {
 
-          retour.style.display = 'flex';
-          affiche = true;
-        } else {
+        retour.style.display = 'flex';
+        affiche = true;
+      } else {
 
-          retour.style.display = 'none';
-          affiche = false;
-        }
+        retour.style.display = 'none';
+        affiche = false;
+      }
 
     }
 
