@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', debut);
 function debut(evt) {
   souris();
   carte();
+  menu();
   carteanim();
   tuto();
   animoosic();
@@ -254,4 +255,42 @@ function cmd() {
 
 }
 
-// //
+// gere le menu //
+
+function menu() {
+  var menu = document.querySelector('nav');
+  var retour = document.querySelector('.retour');
+  var rond = document.querySelector('.rond');
+  menu.classList.add('menu-off');
+  retour.classList.add('retour-off');
+  retour.style.display = 'none';
+  rond.addEventListener('click', activ);
+  var affiche = false;
+  var i = 0;
+
+  function activ( evt ) {
+    if (i == 0){
+      menu.classList.remove('menu-off');
+    }else if (i >= 1) {
+      menu.classList.toggle('menu-off-b');
+    }
+    i = i+1;
+    menu.classList.toggle('menu-on');
+    retour.classList.toggle('retour-off');
+    retour.classList.toggle('retour-on');
+    window.setTimeout(attente,600);
+    function attente() {
+        if (affiche == false) {
+
+          retour.style.display = 'flex';
+          affiche = true;
+        } else {
+
+          retour.style.display = 'none';
+          affiche = false;
+        }
+
+    }
+
+  }
+}

@@ -84,6 +84,106 @@ section {
 header {
   height: 70px;
 }
+/* nav */
+
+nav {
+  position: fixed;
+  top: 0;
+  right:0;
+  left:0;
+  bottom:50%;
+  background-color: var(--grey);
+  z-index: 2;
+  overflow:inherit;
+}
+
+.rond {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  right:35%;
+  z-index: 3;
+  width: 30%;
+  height: 45px;
+}
+
+.menu-off {
+  clip-path: circle(10.0% at 50% 0%);
+}
+
+.menu-off-b {
+  clip-path: circle(10.0% at 50% 0%);
+  animation: menuanimoff 0.5s ease-in;
+}
+
+.menu-on {
+  clip-path: circle(97% at 50% 0%);
+  animation: menuanim 0.5s ease-out;
+}
+.retour {
+  position: fixed;
+  top: 0;
+  right:35%;
+  left:35%;
+  bottom:90%;
+  background-color: var(--background);
+  z-index: 2;
+  justify-content: center;
+  flex-direction:row;
+  align-items:flex-start;
+}
+
+.retour-on {
+  clip-path: circle(47% at 50% 0%);
+  animation: retouranim 0.5s ease-out;
+}
+
+.retour-off {
+  clip-path: circle(0% at 50% 0%);
+  animation: retouranimoff 0.5s ease-in;
+}
+
+.croix {
+  width: 20%;
+  height: auto;
+  margin-top: 5%;
+}
+
+@keyframes menuanim {
+  0% {
+    clip-path: circle(10.0% at 50% 0%);
+  }
+  100% {
+    clip-path: circle(97% at 50% 0%);
+  }
+}
+
+@keyframes menuanimoff {
+  0% {
+    clip-path: circle(97% at 50% 0%);
+  }
+  100% {
+    clip-path: circle(10.0% at 50% 0%);
+  }
+}
+
+@keyframes retouranim {
+  0% {
+    clip-path: circle(0.0% at 50% 0%);
+  }
+  100% {
+    clip-path: circle(47% at 50% 0%);
+  }
+}
+
+@keyframes retouranimoff {
+  0% {
+    clip-path: circle(47% at 50% 0%);
+  }
+  100% {
+    clip-path: circle(0.0% at 50% 0%);
+  }
+}
 
 /* presentation */
 .ensemble-carte {
@@ -187,12 +287,17 @@ header {
 }
 
 /* competences */
+#competences {
+  display: grid;
+}
 .title-competences {
   margin-bottom: 0;
 }
 
 .galerie-competences {
   height: 55vw;
+  padding-top: 20vw;
+  overflow: hidden;
 }
 
 .bouton-voir {
@@ -203,9 +308,6 @@ header {
   overflow: hidden;
 }
 
-.galerie-competences {
-  padding-top: 20vw;
-}
 
 .moosic {
   animation: webapparition 2s ease-out;
