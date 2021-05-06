@@ -393,6 +393,48 @@ nav {
   width: 4%;
 }
 
+.graphisme {
+  margin-bottom: 10%;
+}
+
+.logo-graphisme {
+  width: 50%;
+}
+
+.logo-moosic {
+  transform: rotateZ(10deg) translateY(30%);
+}
+
+.logo-phanpharma {
+  transform: translateX(100%) translateY(70%) rotateZ(-10deg);
+}
+
+.logo-diamyra {
+  transform:translateY(50%) rotateZ(10deg);
+}
+
+.logo-active {
+  animation: animlogo 1s linear;
+}
+
+@keyframes animlogo {
+  0% {
+    transform: scaleX(1) rotateZ(10deg) translateY(30%);
+  }
+
+  60% {
+    transform: scaleX(0.5) rotateZ(10deg) translateY(30%);
+  }
+
+  80% {
+    transform: scaleX(1.3) rotateZ(10deg) translateY(30%);
+  }
+
+  100% {
+    transform: scaleX(1) rotateZ(10deg) translateY(30%);
+  }
+}
+
 /* mes outils */
 
 .bouton-affichage {

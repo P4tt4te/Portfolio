@@ -57,9 +57,20 @@ function souris() {
 function carte() {
   var carte = document.querySelector('.ensemble-carte');
   carte.addEventListener('click', retourne);
+  var moosic = document.querySelector('.logo-moosic');
+  moosic.addEventListener('click', logo1);
 
   function retourne(evt) {
     carte.classList.toggle('retourne');
+  }
+
+  function logo1( evt ) {
+    moosic.classList.add('logo-active');
+    window.setTimeout(attente, 1000);
+
+    function attente() {
+      moosic.classList.remove('logo-active');
+    }
   }
 
 }
