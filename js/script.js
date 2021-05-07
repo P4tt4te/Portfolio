@@ -11,7 +11,7 @@ function debut(evt) {
   carteanim();
   tuto();
   animoosic();
-
+  galerie();
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -25,8 +25,8 @@ function souris() {
     document.addEventListener('mousemove', coor);
 
     function coor(e) {
-      mousePosX = e.pageX;
-      mousePosY = e.pageY;
+      mousePosX = e.clientX;
+      mousePosY = e.clientY;
       petitCercle.style.top = mousePosY + "px";
       petitCercle.style.left = mousePosX + "px";
 
@@ -331,16 +331,119 @@ function menu() {
 
   }
 
-  function galerie() {
-    const atom = { num: 1, src: 'content/outils/galerie/atom.svg', desc: 'Atom' };
-    const affinityd = { num: 2, src: 'content/outils/galerie/affinityDesigner.svg', desc: 'Affinity Designer' };
-    const affinityp = { num: 3, src: 'content/outils/galerie/affinityPhoto.svg', desc: 'Affinity Photo' };
-    const figma = { num: 4, src: 'content/outils/galerie/figma.svg', desc: 'Figma' };
-    const githubd = { num: 5, src: 'content/outils/galerie/github.svg', desc: 'Github Desktop' };
-    const illustrator = { num: 6, src: 'content/outils/galerie/illustrator.svg', desc: 'Adobe Illustrator' };
-    const notion = { num: 7, src: 'content/outils/galerie/notion.svg', desc: 'Notion.so' };
-    const premier = { num: 8, src: 'content/outils/galerie/premier.svg', desc: 'Premier pro' };
+}
 
+function galerie() {
+  const atom = {
+    num: 1,
+    src: 'content/outils/galerie/atom.svg',
+    desc: 'Atom'
+  };
+  const affinityd = {
+    num: 2,
+    src: 'content/outils/galerie/affinityDesigner.svg',
+    desc: 'Affinity Designer'
+  };
+  const affinityp = {
+    num: 3,
+    src: 'content/outils/galerie/affinityPhoto.svg',
+    desc: 'Affinity Photo'
+  };
+  const figma = {
+    num: 4,
+    src: 'content/outils/galerie/figma.svg',
+    desc: 'Figma'
+  };
+  const githubd = {
+    num: 5,
+    src: 'content/outils/galerie/github.svg',
+    desc: 'Github Desktop'
+  };
+  const illustrator = {
+    num: 6,
+    src: 'content/outils/galerie/illustrator.svg',
+    desc: 'Adobe Illustrator'
+  };
+  const notion = {
+    num: 7,
+    src: 'content/outils/galerie/notion.svg',
+    desc: 'Notion.so'
+  };
+  const premier = {
+    num: 8,
+    src: 'content/outils/galerie/premier.svg',
+    desc: 'Premier pro'
+  };
+
+  var avant = document.querySelector('.galerie-outils-avant');
+  var arriere = document.querySelector('.galerie-outils-arriere');
+
+  var face = false;
+  var boutons = document.querySelectorAll('.rond-bouton-affichage');
+  for (var bouton of boutons) {
+    bouton.addEventListener('click', change);
+  }
+
+  function change(evt) {
+    var image, text;
+    if (face == false) {
+      image = document.querySelector('.galerie-outils-arriere-img');
+      text = document.querySelector('.galerie-outils-arriere-txt');
+      face = true;
+    } else {
+      image = document.querySelector('.galerie-outils-avant > img');
+      text = document.querySelector('.galerie-outils-avant-txt');
+      face = false;
+    }
+
+    var nbr = this.dataset.num;
+
+
+    switch (nbr) {
+      case '1':
+        image.src = atom.src;
+        image.alt = atom.desc;
+        text.innerHTML = atom.desc;
+        break;
+      case '2':
+        image.src = affinityd.src;
+        image.alt = affinityd.desc;
+        text.innerHTML = affinityd.desc;
+        break;
+      case '3':
+        image.src = affinityp.src;
+        image.alt = affinityp.desc;
+        text.innerHTML = affinityp.desc;
+        break;
+      case '4':
+        image.src = figma.src;
+        image.alt = figma.desc;
+        text.innerHTML = figma.desc;
+        break;
+      case '5':
+        image.src = githubd.src;
+        image.alt = githubd.desc;
+        text.innerHTML = githubd.desc;
+        break;
+      case '6':
+        image.src = illustrator.src;
+        image.alt = illustrator.desc;
+        text.innerHTML = illustrator.desc;
+        break;
+      case '7':
+        image.src = notion.src;
+        image.alt = notion.desc;
+        text.innerHTML = notion.desc;
+        break;
+      case '8':
+        image.src = premier.src;
+        image.alt = premier.desc;
+        text.innerHTML = premier.desc;
+        break;
+    }
+
+    avant.classList.toggle('galerie-outils-rot');
+    arriere.classList.toggle('galerie-outils-rot');
 
   }
 }
