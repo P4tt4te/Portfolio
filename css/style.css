@@ -417,6 +417,14 @@ nav {
   animation: animlogo 1s linear;
 }
 
+.logo-activeb {
+  animation: animlogob 1s linear;
+}
+
+.logo-activec {
+  animation: animlogoc 1s linear;
+}
+
 @keyframes animlogo {
   0% {
     transform: scaleX(1) rotateZ(10deg) translateY(30%);
@@ -432,6 +440,30 @@ nav {
 
   100% {
     transform: scaleX(1) rotateZ(10deg) translateY(30%);
+  }
+}
+
+@keyframes animlogob {
+  0% {
+    transform:translateY(50%) rotateZ(10deg) rotateY(0deg);
+  }
+  50% {
+    transform:translateY(50%) rotateZ(10deg) rotateY(180deg);
+  }
+  100% {
+    transform:translateY(50%) rotateZ(10deg) rotateY(360deg);
+  }
+}
+
+@keyframes animlogoc {
+  0% {
+    transform: translateX(100%) translateY(70%) rotateZ(-10deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(70%) rotateZ(-30deg) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(70%) rotateZ(-10deg) rotateY(360deg);
   }
 }
 

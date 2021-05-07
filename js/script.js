@@ -59,17 +59,39 @@ function carte() {
   carte.addEventListener('click', retourne);
   var moosic = document.querySelector('.logo-moosic');
   moosic.addEventListener('click', logo1);
+  var diamyra = document.querySelector('.logo-diamyra');
+  diamyra.addEventListener('click', logo2);
+  var phanpharma = document.querySelector('.logo-phanpharma');
+  phanpharma.addEventListener('click', logo3);
 
   function retourne(evt) {
     carte.classList.toggle('retourne');
   }
 
-  function logo1( evt ) {
+  function logo1(evt) {
     moosic.classList.add('logo-active');
     window.setTimeout(attente, 1000);
 
     function attente() {
       moosic.classList.remove('logo-active');
+    }
+  }
+
+  function logo2(evt) {
+    diamyra.classList.add('logo-activeb');
+    window.setTimeout(attenteb, 1000);
+
+    function attenteb() {
+      diamyra.classList.remove('logo-activeb');
+    }
+  }
+
+  function logo3(evt) {
+    phanpharma.classList.add('logo-activec');
+    window.setTimeout(attentec, 1000);
+
+    function attentec() {
+      phanpharma.classList.remove('logo-activec');
     }
   }
 
