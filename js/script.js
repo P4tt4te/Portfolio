@@ -207,7 +207,7 @@ function coordtel() {
   }
 
   function handleOrientation(e) {
-    window.setTimeout(attente, 100);
+    window.setTimeout(attente, 200);
 
     function attente() {
       mousePosX = e.gamma;
@@ -329,5 +329,18 @@ function menu() {
 
     }
 
+  }
+
+  function galerie() {
+    const atom = { num: 1, src: 'content/outils/galerie/atom.svg', desc: 'Atom' };
+    const affinityd = { num: 2, src: 'content/outils/galerie/affinityDesigner.svg', desc: 'Affinity Designer' };
+    const affinityp = { num: 3, src: 'content/outils/galerie/affinityPhoto.svg', desc: 'Affinity Photo' };
+    const figma = { num: 4, src: 'content/outils/galerie/figma.svg', desc: 'Figma' };
+    const githubd = { num: 5, src: 'content/outils/galerie/github.svg', desc: 'Github Desktop' };
+    const figma = { num: 6, src: 'content/outils/galerie/illustrator.svg', desc: 'Adobe Illustrator' };
+    const notion = { num: 7, src: 'content/outils/galerie/notion.svg', desc: 'Notion.so' };
+    const premier = { num: 8, src: 'content/outils/galerie/premier.svg', desc: 'Premier pro' };
+
+    
   }
 }
