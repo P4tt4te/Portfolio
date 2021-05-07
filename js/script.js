@@ -55,8 +55,10 @@ function souris() {
 
 // gere le retournement de la carte//
 function carte() {
+
   var carte = document.querySelector('.ensemble-carte');
   carte.addEventListener('click', retourne);
+  // et aussi les animations des logos dans mes compétences puis graphisme //
   var moosic = document.querySelector('.logo-moosic');
   moosic.addEventListener('click', logo1);
   var diamyra = document.querySelector('.logo-diamyra');
@@ -142,11 +144,7 @@ function coordsouris() {
 
 
   function coord(e) {
-    window.setTimeout(attente, 100);
 
-    function attente() {
-
-    }
     mousePosX = e.pageX;
     mousePosY = e.pageY;
 
@@ -184,7 +182,7 @@ function coordtel() {
   let visible = true;
   var options = {
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.3
   }
   var observer = new IntersectionObserver(callback, options);
   observer.observe(carte);
@@ -207,7 +205,7 @@ function coordtel() {
   }
 
   function handleOrientation(e) {
-    window.setTimeout(attente, 200);
+    window.setTimeout(attente, 100);
 
     function attente() {
       mousePosX = e.gamma;
@@ -397,7 +395,7 @@ function galerie() {
     }
 
     var nbr = this.dataset.num;
-
+    this.innerHTML = '<circle cx="8.5" cy="7.5073" r="7.5073" fill="#363636" />'; 
 
     switch (nbr) {
       case '1':
