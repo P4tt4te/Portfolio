@@ -210,16 +210,16 @@ function coordtel() {
     window.setTimeout(attente, 100);
 
     function attente() {
+      mousePosX = e.gamma;
+      mousePosY = e.beta;
+      mousePosY = mousePosY - 30;
+
+      if (carte.classList.contains('retourne') == true) {
+        mousePosX = mousePosX + 180;
+      }
+      flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
 
     }
-    mousePosX = e.gamma;
-    mousePosY = e.beta;
-    mousePosY = mousePosY - 30;
-
-    if (carte.classList.contains('retourne') == true) {
-      mousePosX = mousePosX + 180;
-    }
-    flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
 
   }
 }
