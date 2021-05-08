@@ -190,7 +190,18 @@ function coordtel() {
   function callback() {
 
     if (visible == true) {
-      window.addEventListener('deviceorientation', handleOrientation);
+
+      window.setInterval(opti, 100);
+      var opti = false;
+      function opti() {
+        if (opti == false) {
+          window.addEventListener('deviceorientation', handleOrientation);
+          opti = true;
+        } else {
+          window.removeEventListener('deviceorientation', handleOrientation);
+          opti = false;
+        }
+      }
       visible = false;
       console.log('ajoute');
     } else {
@@ -205,9 +216,7 @@ function coordtel() {
   }
 
   function handleOrientation(e) {
-    window.setTimeout(attente, 100);
 
-    function attente() {
       mousePosX = e.gamma;
       mousePosY = e.beta;
       mousePosY = mousePosY - 30;
@@ -217,7 +226,7 @@ function coordtel() {
       }
       flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
 
-    }
+
 
   }
 }
