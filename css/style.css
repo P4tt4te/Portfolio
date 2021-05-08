@@ -1,7 +1,6 @@
 :root {
   --background: #F0F0F3;
   --grey: #363636;
-  --neuromorphism: drop-shadow(10px 10px 30px rgba(174, 174, 192, 0.4)) drop-shadow(-10px -10px 30px white);
 }
 
 @font-face {
@@ -572,6 +571,37 @@ nav {
 }
 
 /*contact */
+
+input {
+  cursor: none;
+  font-family: 'Archivo', sans-serif;
+  color: var(--grey);
+  padding-left: 5%;
+}
+
+textarea {
+  cursor: none;
+  resize:vertical;
+  border-radius: 6px;
+  font-family: 'Archivo', sans-serif;
+  color: var(--grey);
+  padding-left: 5%;
+}
+
+textarea:focus {
+  color: var(--background);
+  background-color: var(--grey);
+  transition: background-color 0.3s ease-out;
+  outline-style: none;
+}
+
+.div-form {
+  display:flex;
+  flex-direction: column;
+  padding: 5%;
+  justify-content: space-around;
+}
+
 .bouton-form {
   width: 25%;
   height: 25%;
@@ -583,6 +613,19 @@ nav {
   padding: 10%;
   fill: var(--grey);
 }
+
+input[type=text] {
+  border-radius: 6px;
+
+}
+
+input[type=text]:focus {
+  background-color: var(--grey) ;
+  color: white;
+  transition: background-color 0.3s ease-out;
+  outline-style: none;
+}
+
 
 /* footer */
 footer {
