@@ -331,6 +331,8 @@ function menu() {
 
 }
 
+//gere la galerie de mes outils //
+
 function galerie() {
   const atom = {
     num: 1,
@@ -395,7 +397,7 @@ function galerie() {
     }
 
     var nbr = this.dataset.num;
-    this.innerHTML = '<circle cx="8.5" cy="7.5073" r="7.5073" fill="#363636" />'; 
+    this.innerHTML = '<circle cx="8.5" cy="7.5073" r="7.5073" fill="#363636" />';
 
     switch (nbr) {
       case '1':
@@ -444,4 +446,10 @@ function galerie() {
     arriere.classList.toggle('galerie-outils-rot');
 
   }
+}
+
+//desactiver le click droit//
+
+document.oncontextmenu = function() {
+  return false;
 }
