@@ -191,9 +191,9 @@ function coordtel() {
 
     if (visible == true) {
 
-      window.setInterval(opti, 100);
+      window.setInterval(optim, 100);
       var opti = false;
-      function opti() {
+      function optim() {
         if (opti == false) {
           window.addEventListener('deviceorientation', handleOrientation);
           opti = true;
@@ -205,6 +205,7 @@ function coordtel() {
       visible = false;
       console.log('ajoute');
     } else {
+      window.clearInterval(optim, 100);
       window.removeEventListener('deviceorientation', handleOrientation);
       visible = true;
       console.log('retire');
