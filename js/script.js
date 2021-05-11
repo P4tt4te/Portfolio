@@ -190,22 +190,11 @@ function coordtel() {
   function callback() {
 
     if (visible == true) {
-
-      window.setInterval(optim, 100);
-      var opti = false;
-      function optim() {
-        if (opti == false) {
-          window.addEventListener('deviceorientation', handleOrientation);
-          opti = true;
-        } else {
-          window.removeEventListener('deviceorientation', handleOrientation);
-          opti = false;
-        }
-      }
+      window.addEventListener('deviceorientation', handleOrientation);
       visible = false;
       console.log('ajoute');
     } else {
-      window.clearInterval(optim, 100);
+
       window.removeEventListener('deviceorientation', handleOrientation);
       visible = true;
       console.log('retire');
@@ -218,14 +207,14 @@ function coordtel() {
 
   function handleOrientation(e) {
 
-      mousePosX = e.gamma;
-      mousePosY = e.beta;
-      mousePosY = mousePosY - 30;
+    mousePosX = e.gamma;
+    mousePosY = e.beta;
+    mousePosY = mousePosY - 30;
 
-      if (carte.classList.contains('retourne') == true) {
-        mousePosX = mousePosX + 180;
-      }
-      flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
+    if (carte.classList.contains('retourne') == true) {
+      mousePosX = mousePosX + 180;
+    }
+    flip.style.transform = 'rotateX(' + mousePosY + "deg)" + ' rotateY(' + mousePosX + 'deg)';
 
 
 
