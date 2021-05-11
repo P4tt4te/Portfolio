@@ -683,8 +683,33 @@ footer {
   width: 30px;
 }
 
-/* version pc */
-@media all and (min-width: 1526px) {
+/* version tablet */
+@media all and (min-width: 481px) {
+  html {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  nav {
+    font-size: 2rem;
+    bottom: 20%;
+  }
+
+
+}
+
+/*version tablet landscape */
+@media all and (min-width: 769px) {
+
+}
+
+/* version laptop */
+@media all and (min-width: 1025px) {
+
+}
+
+/* version desktop */
+@media all and (min-width: 1600px) {
   h1 {
     font-size: 4rem;
   }
