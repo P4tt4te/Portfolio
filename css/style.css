@@ -20,6 +20,10 @@ html {
   overflow-x: hidden;
 }
 
+a {
+  cursor: none;
+}
+
 h1, h2 {
   font-weight: bold;
 }
@@ -611,20 +615,22 @@ nav {
 
 /*contact */
 
-input {
+input, textarea {
   cursor: none;
   font-family: 'Archivo', sans-serif;
   color: var(--grey);
   padding-left: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+label {
+  cursor: none;
 }
 
 textarea {
-  cursor: none;
   resize:vertical;
   border-radius: 6px;
-  font-family: 'Archivo', sans-serif;
-  color: var(--grey);
-  padding-left: 5%;
 }
 
 textarea:focus {
@@ -874,7 +880,7 @@ footer {
   #competences {
     display:grid;
     grid-template-columns:1fr;
-    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.6fr 0.6fr 0.6fr;
     grid-template-areas:
     "titre"
     "web"
@@ -894,7 +900,7 @@ footer {
   }
 
   .web-design-content {
-    width: 50%;
+    width: 40%;
   }
 
   .galerie-competences {
@@ -912,27 +918,32 @@ footer {
   }
 
   .code {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-bottom: 0;
   }
 
   .graphisme {
     grid-area: gra;
-    display:flex;
   }
 
   .graphisme-logo {
     margin-top: 20%;
+    width: 80%;
   }
 
   .logo-moosic {
     margin-bottom:10%;
+
   }
 
   .logo-diamyra {
     margin-top: 10%;
   }
 
+  .logo-phanpharma {
+    margin-left: 20%;
+  }
+  /* mes outils */
   .galerie-outils {
     height:300px;
   }
@@ -949,13 +960,33 @@ footer {
     font-size: 1.5rem;
   }
 
+  /*realisation*/
   .grille-projet {
     grid-template-columns:1fr 1fr 1fr;
   }
 
-  .reseaux-logo {
-    width: 40px;
+  /*contact*/
+
+  input {
+    font-size: 1rem;
   }
+
+  .formulaire-de-contact {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .bouton-form {
+    width: 10%;
+    height: 10%;
+  }
+
+
+  .reseaux-logo {
+    width: 60px;
+  }
+
+
 
 }
 
