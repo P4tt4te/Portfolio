@@ -18,7 +18,7 @@ function souris() {
   const grandCercle = document.querySelector('.cursor2');
   const petitCercle = document.querySelector('.cursor');
   var carte = document.querySelector('.carte-flip');
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 1025px)").matches) {
     let mousePosX = 0,
       mousePosY = 0;
 
@@ -101,7 +101,7 @@ function carte() {
 //détermine si l'utilisateur est sur pc ou smartphone//
 function carteanim() {
   console.log('carteanim');
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 1025px)").matches) {
     coordsouris();
     descimage(1);
   } else {

@@ -695,6 +695,27 @@ footer {
     bottom: 20%;
   }
 
+  .liens-menu {
+    margin-top: calc(45px + 10%);
+  }
+
+  .ensemble-carte {
+    height: 80vw;
+  }
+
+  .bouton-github {
+    width: 55%;
+    padding: 5%;
+  }
+
+  .rond-bouton-affichage {
+    width: 30px;
+    height:28px;
+  }
+
+  .reseaux-logo {
+    width: 35px;
+  }
 
 }
 
