@@ -576,13 +576,18 @@ nav {
 }
 
 /* mes productions */
+
+
 .grille-projet {
   display: grid;
   padding-top: 10%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 25%;
-  grid-gap: 10%;
+  padding-bottom: 90%;
+  grid-gap: 1%;
+  grid-auto-rows: repeat(10, 1fr);
+
+
 }
 
 .photo-item-grille {
@@ -752,6 +757,8 @@ footer {
 
   .grille-projet {
     grid-template-columns:1fr 1fr;
+    padding-bottom: 78%;
+    grid-gap: 8%;
   }
 
   .reseaux-logo {
@@ -963,6 +970,8 @@ footer {
   /*realisation*/
   .grille-projet {
     grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 10%;
+    padding-bottom: 40%;
   }
 
   /*contact*/
