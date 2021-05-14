@@ -744,6 +744,10 @@ footer {
     padding: 5%;
   }
 
+  .grille-projet {
+    grid-template-columns:1fr 1fr;
+  }
+
   .reseaux-logo {
     width: 40px;
   }
@@ -751,6 +755,207 @@ footer {
 
 /* version laptop */
 @media all and (min-width: 1025px) {
+  html {
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+  p {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* menu */
+
+  nav {
+    font-size: 1.5rem;
+    bottom: 80%;
+  }
+
+  .menu-off {
+    clip-path: circle(6.0% at 50% 0%);
+  }
+
+  .liens-menu {
+    margin-top: calc(30px + 5%);
+    flex-direction: row;
+  }
+
+  .menu-off-b {
+    clip-path: circle(6.0% at 50% 0%);
+    animation: menuanimoff 0.5s ease-in;
+  }
+
+  .menu-on {
+    clip-path: circle(97% at 50% 0%);
+    animation: menuanim 0.5s ease-out;
+  }
+
+
+  @keyframes menuanim {
+    0% {
+      clip-path: circle(6.0% at 50% 0%);
+    }
+
+    100% {
+      clip-path: circle(97% at 50% 0%);
+    }
+  }
+
+  @keyframes menuanimoff {
+    0% {
+      clip-path: circle(97% at 50% 0%);
+    }
+
+    100% {
+      clip-path: circle(6.0% at 50% 0%);
+    }
+  }
+
+  .retour {
+    left:45%;
+    right:45%;
+  }
+
+  /*presentation*/
+
+  #presentation {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . desc ."
+    "nom nom carte carte"
+    "tuto tuto carte carte"
+    "tuto tuto carte carte";
+
+  }
+
+  #presentation>h1 {
+    grid-area: nom;
+    font-size: 3.5rem;
+  }
+
+  .ensemble-carte {
+    grid-area: carte;
+  }
+
+  .desc-carte {
+    grid-area: desc;
+  }
+
+  .ensemble-bouton-tuto {
+    grid-area: tuto;
+
+    margin-right: 10%;
+  }
+
+  .ensemble-carte {
+    height: 45vw;
+  }
+
+  .bouton-github {
+    width: 45%;
+    padding: 5%;
+  }
+
+  /*mes competences */
+
+  #competences {
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "titre"
+    "web"
+    "dev"
+    "gra";
+
+  }
+
+  #competences>h2 {
+    grid-area: titre;
+  }
+
+
+  .web-design {
+    grid-area: web;
+    display:flex;
+  }
+
+  .web-design-content {
+    width: 50%;
+  }
+
+  .galerie-competences {
+    height: 30vw;
+    width: 60%;
+  }
+
+  .developpement-front-end {
+    grid-area: dev;
+  }
+
+  .bouton-github {
+    width: 30%;
+    padding: 3%;
+  }
+
+  .code {
+    margin-top: 15%;
+    margin-bottom: 0;
+  }
+
+  .graphisme {
+    grid-area: gra;
+    display:flex;
+  }
+
+  .graphisme-logo {
+    margin-top: 20%;
+  }
+
+  .logo-moosic {
+    margin-bottom:10%;
+  }
+
+  .logo-diamyra {
+    margin-top: 10%;
+  }
+
+  .galerie-outils {
+    height:300px;
+  }
+
+  .galerie-outils-avant-img {
+    width:15%;
+  }
+
+  .galerie-outils-arriere-img {
+    width:15%;
+  }
+
+  .galerie-outils-txt {
+    font-size: 1.5rem;
+  }
+
+  .grille-projet {
+    grid-template-columns:1fr 1fr 1fr;
+  }
+
+  .reseaux-logo {
+    width: 40px;
+  }
 
 }
 
