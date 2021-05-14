@@ -721,7 +721,32 @@ footer {
 
 /*version tablet landscape */
 @media all and (min-width: 769px) {
+  nav {
+    font-size: 2rem;
+    bottom: 0%;
+  }
 
+  .retour {
+    left:40%;
+    right:40%;
+  }
+
+  .liens-menu {
+    margin-top: calc(45px + 10%);
+  }
+
+  .ensemble-carte {
+    height: 80vw;
+  }
+
+  .bouton-github {
+    width: 45%;
+    padding: 5%;
+  }
+
+  .reseaux-logo {
+    width: 40px;
+  }
 }
 
 /* version laptop */
