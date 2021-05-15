@@ -156,14 +156,13 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height:70%;
-  width:100%;
+  height: 70%;
+  width: 100%;
   align-content: center;
   text-align: center;
   margin-top: calc(45px + 5%);
   font-weight: 600;
 }
-
 
 .lien-menu:active {
   transform: scaleY(1);
@@ -173,20 +172,19 @@ nav {
   padding-right: 10%;
   animation: animlienmenu 0.1s ease-out both;
   font-size: 2rem;
+  overflow: hidden;
 }
 
 @keyframes animlienmenu {
   0% {
     transform: scaleY(0);
     background-color: var(--background);
-
   }
 
   100% {
     transform: scaleY(1);
     background-color: var(--background);
   }
-
 }
 
 .croix {
@@ -538,37 +536,34 @@ nav {
   overflow: hidden;
   perspective: 1000px;
   text-align: center;
-
 }
 
 .galerie-outils-int {
-    position: relative;
-    width:100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1.2s;
-
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.2s;
 }
 
 .galerie-outils-avant {
-  position:absolute;
+  position: absolute;
   width: 100%;
   height: 100%;
-   backface-visibility: hidden;
-   transition: transform 1s ease-out;
+  backface-visibility: hidden;
+  transition: transform 1s ease-out;
 }
 
 .galerie-outils-arriere {
-  position:absolute;
+  position: absolute;
   width: 100%;
   height: 100%;
-   backface-visibility: hidden;
-   transition: transform 1s ease-out;
+  backface-visibility: hidden;
+  transition: transform 1s ease-out;
 }
 
 .galerie-outils-rot {
   transform: rotateY(180deg);
-
 }
 
 .galerie-outils-txt {
@@ -576,8 +571,6 @@ nav {
 }
 
 /* mes productions */
-
-
 .grille-projet {
   display: grid;
   padding-top: 10%;
@@ -586,8 +579,6 @@ nav {
   padding-bottom: 90%;
   grid-gap: 1%;
   grid-auto-rows: repeat(10, 1fr);
-
-
 }
 
 .photo-item-grille {
@@ -619,7 +610,6 @@ nav {
 }
 
 /*contact */
-
 input, textarea {
   cursor: none;
   font-family: 'Archivo', sans-serif;
@@ -634,7 +624,7 @@ label {
 }
 
 textarea {
-  resize:vertical;
+  resize: vertical;
   border-radius: 6px;
 }
 
@@ -646,7 +636,7 @@ textarea:focus {
 }
 
 .div-form {
-  display:flex;
+  display: flex;
   flex-direction: column;
   padding: 5%;
   justify-content: space-around;
@@ -666,16 +656,14 @@ textarea:focus {
 
 input[type=text] {
   border-radius: 6px;
-
 }
 
 input[type=text]:focus {
-  background-color: var(--grey) ;
+  background-color: var(--grey);
   color: white;
   transition: background-color 0.3s ease-out;
   outline-style: none;
 }
-
 
 /* footer */
 footer {
@@ -721,13 +709,12 @@ footer {
 
   .rond-bouton-affichage {
     width: 30px;
-    height:28px;
+    height: 28px;
   }
 
   .reseaux-logo {
     width: 35px;
   }
-
 }
 
 /*version tablet landscape */
@@ -738,8 +725,8 @@ footer {
   }
 
   .retour {
-    left:40%;
-    right:40%;
+    left: 40%;
+    right: 40%;
   }
 
   .liens-menu {
@@ -756,7 +743,7 @@ footer {
   }
 
   .grille-projet {
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding-bottom: 78%;
     grid-gap: 8%;
   }
@@ -772,6 +759,7 @@ footer {
     padding-left: 12vw;
     padding-right: 12vw;
   }
+
   p {
     font-size: 1rem;
   }
@@ -789,7 +777,6 @@ footer {
   }
 
   /* menu */
-
   nav {
     font-size: 1.5rem;
     bottom: 80%;
@@ -814,7 +801,6 @@ footer {
     animation: menuanim 0.5s ease-out;
   }
 
-
   @keyframes menuanim {
     0% {
       clip-path: circle(6.0% at 50% 0%);
@@ -836,22 +822,20 @@ footer {
   }
 
   .retour {
-    left:45%;
-    right:45%;
+    left: 45%;
+    right: 45%;
   }
 
   /*presentation*/
-
   #presentation {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 1fr 1fr 1fr;
     grid-template-areas:
-    ". . desc ."
-    "nom nom carte carte"
-    "tuto tuto carte carte"
-    "tuto tuto carte carte";
-
+      ". . desc ."
+      "nom nom carte carte"
+      "tuto tuto carte carte"
+      "tuto tuto carte carte";
   }
 
   #presentation>h1 {
@@ -867,9 +851,16 @@ footer {
     grid-area: desc;
   }
 
+  .desc-carte>img {
+    transform: rotateZ(-90deg) scale(0.6) translateX(-30%) translateY(-10%);
+  }
+
+  .desc-carte-txt {
+    min-width: 150px;
+  }
+
   .ensemble-bouton-tuto {
     grid-area: tuto;
-
     margin-right: 10%;
   }
 
@@ -883,27 +874,24 @@ footer {
   }
 
   /*mes competences */
-
   #competences {
-    display:grid;
-    grid-template-columns:1fr;
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.6fr 0.6fr 0.6fr;
     grid-template-areas:
-    "titre"
-    "web"
-    "dev"
-    "gra";
-
+      "titre"
+      "web"
+      "dev"
+      "gra";
   }
 
   #competences>h2 {
     grid-area: titre;
   }
 
-
   .web-design {
     grid-area: web;
-    display:flex;
+    display: flex;
   }
 
   .web-design-content {
@@ -926,7 +914,7 @@ footer {
 
   .code {
     margin-top: 10%;
-    margin-bottom: 0;
+    margin-bottom: 10%;
   }
 
   .graphisme {
@@ -934,33 +922,29 @@ footer {
   }
 
   .graphisme-logo {
-    margin-top: 20%;
+    margin-top: 10%;
     width: 80%;
   }
 
-  .logo-moosic {
-    margin-bottom:10%;
+  .logo-moosic {}
 
-  }
-
-  .logo-diamyra {
-    margin-top: 10%;
-  }
+  .logo-diamyra {}
 
   .logo-phanpharma {
     margin-left: 20%;
   }
+
   /* mes outils */
   .galerie-outils {
-    height:300px;
+    height: 350px;
   }
 
   .galerie-outils-avant-img {
-    width:15%;
+    width: 15%;
   }
 
   .galerie-outils-arriere-img {
-    width:15%;
+    width: 15%;
   }
 
   .galerie-outils-txt {
@@ -969,13 +953,12 @@ footer {
 
   /*realisation*/
   .grille-projet {
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10%;
     padding-bottom: 40%;
   }
 
   /*contact*/
-
   input {
     font-size: 1rem;
   }
@@ -990,13 +973,14 @@ footer {
     height: 10%;
   }
 
-
   .reseaux-logo {
     width: 60px;
   }
 
-
-
+  footer {
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
 }
 
 /* version desktop */
@@ -1007,5 +991,47 @@ footer {
 
   h2 {
     font-size: 3rem;
+  }
+
+  #presentation>h1 {
+    grid-area: nom;
+    margin-top: 10%;
+    font-size: 4rem;
+  }
+
+  .sourire {
+    margin-left: 5%;
+  }
+
+  .desc-carte {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  .desc-carte-txt {
+    min-width: 140px;
+  }
+
+  .desc-carte>img {
+    transform: rotateZ(-90deg) scale(0.8) translateX(-20%) translateY(-30%);
+  }
+
+  .bouton-github {
+    width: 20%;
+    padding: 3%;
+  }
+
+  /* outils */
+  .galerie-outils {
+    height: 400px;
+  }
+
+  .galerie-outils-avant-img {
+    width: 14%;
+  }
+
+  .galerie-outils-arriere-img {
+    width: 14%;
   }
 }
