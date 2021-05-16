@@ -12,6 +12,8 @@ function debut(evt) {
   tuto();
   animoosic();
   galerie();
+  cmd();
+
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -285,8 +287,46 @@ function animoosic() {
 // anime le cmd de windows //
 
 function cmd() {
+  var message = "hello world.";
+  var taille = 12;
+  var negativ = false;
+  var barre = document.querySelector('.code-underscore');
+  var zone = document.querySelector('#code-anim');
+  var i = 0;
+  var lettre = message.substr(i,1);
+  window.setInterval(cligno, 400);
+  function cligno() {
+    barre.classList.toggle('cache');
+  }
+  mot();
+  function mot(){
+      var timer = window.setInterval(letter, 200);
+      function letter() {
+        zone.innerHTML = message.substr(0,i);
+        if (negativ == false) {
+          i++;
+        } else {
+          i--;
+        }
+        if (i == 13 | i == -1) {
+          window.clearInterval(timer);
+          window.setTimeout(stop, 1000);
+          console.log('change');
+        }
+        function stop() {
+          if (negativ == false) {
+            negativ = true;
+          } else {
+            negativ = false;
+          }
+          timer = window.setInterval(letter, 200);
+        }
+      }
+  }
 
 }
+
+
 
 // gere le menu //
 
@@ -446,6 +486,7 @@ function galerie() {
 
   }
 }
+
 
 //desactiver le click droit//
 

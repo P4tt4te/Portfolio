@@ -426,10 +426,19 @@ nav {
   margin: 0;
 }
 
+.container-code-anim {
+  display:flex;
+  align-items: baseline;
+  margin-bottom: 2%;
+}
+
+
+
+.cache {
+  opacity: 0;
+}
+
 .code-underscore {
-  position: relative;
-  top: -1rem;
-  left: 5.5rem;
   width: 4%;
 }
 
@@ -1020,6 +1029,10 @@ footer {
   .bouton-github {
     width: 20%;
     padding: 3%;
+  }
+
+  .code-txt {
+    font-size: 1.5rem;
   }
 
   /* outils */
