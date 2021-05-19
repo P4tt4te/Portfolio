@@ -495,7 +495,7 @@ document.oncontextmenu = function() {
 
 // gere le mode nuit //
 
-/*function night() {
+function night() {
   var head = document.querySelector('header');
   let root = document.querySelector(':root');
   var black = false;
@@ -510,7 +510,7 @@ document.oncontextmenu = function() {
       root.style.setProperty('--background','#F0F0F3');
       root.style.setProperty('--grey','#363636');
       black = false;
-    } */
+    }
 
   }
 }
