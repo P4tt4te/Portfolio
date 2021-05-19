@@ -13,7 +13,6 @@ function debut(evt) {
   animoosic();
   galerie();
   cmd();
-
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -492,4 +491,26 @@ function galerie() {
 
 document.oncontextmenu = function() {
   return false;
+}
+
+// gere le mode nuit //
+
+/*function night() {
+  var head = document.querySelector('header');
+  let root = document.querySelector(':root');
+  var black = false;
+  head.addEventListener('click', change);
+
+  function change (evt) {
+    if (black == false) {
+      root.style.setProperty('--background','#363636');
+      root.style.setProperty('--grey','#F0F0F3');
+      black = true;
+    } else {
+      root.style.setProperty('--background','#F0F0F3');
+      root.style.setProperty('--grey','#363636');
+      black = false;
+    } */
+
+  }
 }
