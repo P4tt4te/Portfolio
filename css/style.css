@@ -9,6 +9,28 @@
 }
 
 /* style général */
+
+::-webkit-scrollbar {
+    width: 1em;
+    background-color: var(--grey);
+}
+
+
+::-webkit-scrollbar-track {
+    /* gestion du fond de la barre */
+
+    background-color: var(--background);
+
+}
+
+::-webkit-scrollbar-thumb {
+    /* gestion du curseur de déplacement*/
+    background-color: var(--grey);
+    border-radius: 5px;
+
+}
+
+
 html {
   background-color: var(--background);
   color: var(--grey);
