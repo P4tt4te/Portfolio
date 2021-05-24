@@ -574,6 +574,34 @@ function trie() {
     }
   }
 
+  function triewebdesign( evt ){
+    tous.classList.remove('bouton-trie-select');
+    graphisme.classList.remove('bouton-trie-select');
+    developpement.classList.remove('bouton-trie-select');
+    if (this.classList.contains('bouton-trie-select') == false) {
+        this.classList.add('bouton-trie-select');
+        for (let item of items){
+          item.style.opacity = '0';
+        }
+        for (let itemwebdesign of itemswebdesign){
+          itemwebdesign.style.opacity = '1';
+        }
+    }
+  }
 
+  function triedev( evt ){
+    tous.classList.remove('bouton-trie-select');
+    webdesign.classList.remove('bouton-trie-select');
+    graphisme.classList.remove('bouton-trie-select');
+    if (this.classList.contains('bouton-trie-select') == false) {
+        this.classList.add('bouton-trie-select');
+        for (let item of items){
+          item.style.opacity = '0';
+        }
+        for (let itemdev of itemsdev){
+          itemdev.style.opacity = '1';
+        }
+    }
+  }
 
 }
