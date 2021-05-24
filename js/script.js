@@ -13,6 +13,7 @@ function debut(evt) {
   animoosic();
   galerie();
   cmd();
+  trie();
 }
 // gere l'affichage du pointeur sur pc//
 function souris() {
@@ -292,35 +293,39 @@ function cmd() {
   var barre = document.querySelector('.code-underscore');
   var zone = document.querySelector('#code-anim');
   var i = 0;
-  var lettre = message.substr(i,1);
+  var lettre = message.substr(i, 1);
   window.setInterval(cligno, 400);
+
   function cligno() {
     barre.classList.toggle('cache');
   }
   mot();
-  function mot(){
-      var timer = window.setInterval(letter, 200);
-      function letter() {
-        zone.innerHTML = message.substr(0,i);
-        if (negativ == false) {
-          i++;
-        } else {
-          i--;
-        }
-        if (i == 13 | i == -1) {
-          window.clearInterval(timer);
-          window.setTimeout(stop, 1000);
-          console.log('change');
-        }
-        function stop() {
-          if (negativ == false) {
-            negativ = true;
-          } else {
-            negativ = false;
-          }
-          timer = window.setInterval(letter, 200);
-        }
+
+  function mot() {
+    var timer = window.setInterval(letter, 200);
+
+    function letter() {
+      zone.innerHTML = message.substr(0, i);
+      if (negativ == false) {
+        i++;
+      } else {
+        i--;
       }
+      if (i == 13 | i == -1) {
+        window.clearInterval(timer);
+        window.setTimeout(stop, 1000);
+        console.log('change');
+      }
+
+      function stop() {
+        if (negativ == false) {
+          negativ = true;
+        } else {
+          negativ = false;
+        }
+        timer = window.setInterval(letter, 200);
+      }
+    }
   }
 
 }
@@ -501,16 +506,74 @@ function night() {
   var black = false;
   head.addEventListener('click', change);
 
-  function change (evt) {
+  function change(evt) {
     if (black == false) {
-      root.style.setProperty('--background','#363636');
-      root.style.setProperty('--grey','#F0F0F3');
+      root.style.setProperty('--background', '#363636');
+      root.style.setProperty('--grey', '#F0F0F3');
       black = true;
     } else {
-      root.style.setProperty('--background','#F0F0F3');
-      root.style.setProperty('--grey','#363636');
+      root.style.setProperty('--background', '#F0F0F3');
+      root.style.setProperty('--grey', '#363636');
       black = false;
     }
 
   }
+}
+
+//tri de la grille //
+
+function trie() {
+  var tous = document.querySelector('.bouton-grille-tous');
+  var graphisme = document.querySelector('.bouton-grille-graphisme');
+  var webdesign = document.querySelector('.bouton-grille-webdesign');
+  var developpement = document.querySelector('.bouton-grille-dev');
+  var items = document.querySelectorAll('.item-grille-projet');
+  var itemswebdesign = document.querySelectorAll('.item-grille-projet-webdesign');
+  var itemsgraphisme = document.querySelectorAll('.item-grille-projet-graphisme');
+  var itemsdev = document.querySelectorAll('.item-grille-projet-dev');
+
+  tous.classList.add('bouton-trie-select');
+
+
+  tous.addEventListener('click', trietout);
+  graphisme.addEventListener('click', triegraphisme);
+  webdesign.addEventListener('click', triewebdesign);
+  developpement.addEventListener('click', triedev);
+
+
+  function trietout( evt ) {
+    graphisme.classList.remove('bouton-trie-select');
+    webdesign.classList.remove('bouton-trie-select');
+    developpement.classList.remove('bouton-trie-select');
+    if (this.classList.contains('bouton-trie-select') == false) {
+        this.classList.add('bouton-trie-select');
+        for (let itemgraphisme of itemsgraphisme){
+          itemgraphisme.style.opacity = '1';
+        }
+        for (let itemwebdesign of itemswebdesign){
+          itemwebdesign.style.opacity = '1';
+        }
+        for (let itemdev of itemsdev){
+          itemdev.style.opacity = '1';
+        }
+    }
+  }
+
+  function triegraphisme( evt ){
+    tous.classList.remove('bouton-trie-select');
+    webdesign.classList.remove('bouton-trie-select');
+    developpement.classList.remove('bouton-trie-select');
+    if (this.classList.contains('bouton-trie-select') == false) {
+        this.classList.add('bouton-trie-select');
+        for (let item of items){
+          item.style.opacity = '0';
+        }
+        for (let itemgraphisme of itemsgraphisme){
+          itemgraphisme.style.opacity = '1';
+        }
+    }
+  }
+
+
+
 }

@@ -548,16 +548,6 @@ nav {
   justify-content: space-between;
 }
 
-.trie-grille {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.bouton-grille {
-  padding-left: 5%;
-  padding-right: 5%;
-}
 
 .galerie-outils {
   width: 100%;
@@ -611,6 +601,27 @@ nav {
   grid-gap: 1%;
   grid-auto-rows: repeat(10, 1fr);
 }
+
+.trie-grille {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bouton-grille {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.bouton-trie-select {
+  filter: drop-shadow(8px 8px 10px rgba(174, 174, 192, 0.4)) drop-shadow(-8px -8px 10px white);
+  background-color: var(--grey);
+  border-radius: 6px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--background);
+}
+
 
 .photo-item-grille {
   clip-path: circle(50% at 50% 50%);
