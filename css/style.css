@@ -623,12 +623,12 @@ nav {
 }
 
 
-.photo-item-grille {
+.item-grille-projet .photo-item-grille {
   clip-path: circle(50% at 50% 50%);
   animation: cercleb 0.8s ease-out;
 }
 
-.photo-item-grille:hover {
+.item-grille-projet:hover .photo-item-grille {
   animation: cercle 0.6s ease-out;
   clip-path: circle(70% at 50% 50%);
 }
