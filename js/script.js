@@ -1,6 +1,6 @@
 // mise en place du curseur//
 
-var hoverables = document.querySelectorAll('.hoverable');
+
 
 document.addEventListener('DOMContentLoaded', debut);
 //fonction general//

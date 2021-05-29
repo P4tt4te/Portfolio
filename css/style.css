@@ -186,28 +186,35 @@ nav {
   font-weight: 600;
 }
 
-.lien-menu:active {
-  transform: scaleY(1);
-  background-color: var(--background);
-  color: var(--grey);
-  display: flex;
-  padding-right: 10%;
-  animation: animlienmenu 0.05s ease-out both;
-  font-size: 2rem;
-  overflow: hidden;
+.cercle {
+  display:none;
 }
 
-@keyframes animlienmenu {
+
+@keyframes ecrit {
   0% {
-    transform: scaleY(0.4);
-    background-color: var(--background);
+    stroke-dashoffset: 3200;
   }
 
-  100% {
-    transform: scaleY(1);
-    background-color: var(--background);
+  100%
+  {
+    stroke-dashoffset:0;
   }
 }
+
+@keyframes ecritb {
+  0% {
+    stroke-dashoffset:0;
+
+  }
+
+  100%
+  {
+    stroke-dashoffset:3200;
+  }
+}
+
+
 
 .croix {
   width: 20%;
@@ -840,7 +847,22 @@ footer {
     bottom: 80%;
   }
 
+  .cercle {
+    display: block;
+    stroke: var(--background);
+    position: absolute;
+    left:6%;
+    top:34%;
+    fill:transparent;
+    stroke-dasharray:3200;
+    animation: 1s ecritb;
+    stroke-dashoffset: 3200;
+  }
 
+  .case-lien-menu:hover .cercle{
+    animation: 1s ecrit;
+    stroke-dashoffset:0;
+  }
 
   .menu-off {
     clip-path: circle(6.0% at 50% 0%);
@@ -986,9 +1008,7 @@ footer {
     width: 80%;
   }
 
-  .logo-moosic {}
 
-  .logo-diamyra {}
 
   .logo-phanpharma {
     margin-left: 20%;
