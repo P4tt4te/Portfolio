@@ -121,7 +121,7 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  bottom: 40%;
+  height: 350px;
   background-color: var(--grey);
   z-index: 2;
 }
@@ -756,7 +756,7 @@ footer {
 
   nav {
     font-size: 2rem;
-    bottom: 20%;
+    height: 600px;
   }
 
   .liens-menu {
@@ -786,7 +786,7 @@ footer {
 @media all and (min-width: 769px) {
   nav {
     font-size: 2rem;
-    bottom: 0%;
+    height:750px;
   }
 
   .retour {
@@ -844,13 +844,14 @@ footer {
   /* menu */
   nav {
     font-size: 1.5rem;
-    bottom: 80%;
+    height:170px;
   }
 
   .cercle {
     display: block;
     stroke: var(--background);
     position: absolute;
+    z-index: -1;
     fill:transparent;
     stroke-dasharray:3200;
     animation: 1s ecritb;
@@ -858,13 +859,23 @@ footer {
   }
 
   .cercle-a {
-    left:1.5vw;
-    top:4vh;
+    transform: translateX(-30px) translateY(-80px);
   }
 
   .cercle-b {
-    top:5vh;
-    left:2.5vw;
+    transform: translateX(-50px) translateY(-90px) rotateZ(15deg);
+  }
+
+  .cercle-c {
+    transform: translateX(-40px) translateY(-80px) rotateZ(10deg);
+  }
+
+  .cercle-d {
+    transform: translateX(0px) translateY(-80px);
+  }
+
+  .cercle-e {
+    transform: translateX(-40px) translateY(-80px) rotateZ(60deg);
   }
 
   .case-lien-menu:hover .cercle{
@@ -1072,8 +1083,8 @@ footer {
 }
 
 @media all and (min-width: 1400px) {
-  .cercle-a {
-    left: 4vw;
+  nav {
+    height: 200px;
   }
 }
 
@@ -1087,16 +1098,16 @@ footer {
     font-size: 3rem;
   }
 
+  nav {
+    height: 220px;
+  }
+
   #presentation>h1 {
     grid-area: nom;
     margin-top: 10%;
     font-size: 4rem;
   }
 
-  .cercle-a {
-    left: 5vw;
-    top: 6vh;
-  }
 
   .sourire {
     margin-left: 5%;
