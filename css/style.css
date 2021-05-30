@@ -606,7 +606,6 @@ nav {
   padding-right: 10%;
   padding-bottom: 90%;
   grid-gap: 1%;
-  grid-auto-rows: repeat(10, 1fr);
 }
 
 .trie-grille {
